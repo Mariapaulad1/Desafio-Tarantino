@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Ciclo Quentin Tarantino</title>
+  <style>
+  	
+    body {
+  		font-family: "Lato";	
+  	}
+
+  	.container {
+  		display: grid;
+      grid-template: 70px 1fr 50px / 90px 1fr;   
+      grid-gap: 5px;
+      height: 100vh;
+      grid-template-areas: "header header header " 
+                           "left contenido contenido" 
+                           "footer footer footer";
+  	}
+
+   /* .item {cada cuadrado	
+  	 border: 1px solid red; 
+  	}*/
+
+    .header {  
+      grid-area: header;
+      background: whitesmoke;
+      justify-content:left;
+      display: flex;
+      border: 1px solid #dbdbe2;
+      box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);  
+    }
+
+    .header img {  
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2); 
+    }
+
+    .header input {
+			width: 40%;
+			padding: 5px;
+			font-size: 10px;
+			border: 1px solid #dbdbe2;
+			border-radius: 5px; /*como les estoy poniendo un borde a estos elementos para que no se salgan los pongo en una caja con prop border-box*/
+		  margin-left: 300px;
+			margin-bottom: 5px;  
+      box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);  
+		}
+
+    .lucas{
+      width: 32px;
+      height: 28px;
+    }
+
+    .play {
+      width: 10px;
+      height: 15px;
+    }
+   
+    .left {
+      grid-area: left;
+      justify-content: center;
+      align-items: center;
+      display: grid;
+      background: rgb(212, 100, 109);
+      grid-row-end: 4; 
+      color: whitesmoke;
+      font-weight: bold;   
+    }
+    
+    .left img {
+      margin-left: 5px;
+    }
+   
+    .detail-container {
+	    background-color: rgba(201, 71, 82, .8);
+      margin-top: -151px;
+      position: relative;
+      padding: 10px;
+      text-align: left;
+      display: grid;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+	  .image-detail {
+		  font-size: 12px;
+		  font-weight: bold;
+      color: whitesmoke;
+		  width: 100%;
+		  height: 40%;
+		  align-items: center;
+		  text-align: left;
+	  }
+   
+    .title {
+     background-color: transparent;
+     font-family: "Lato";
+     font-weight: bold;
+     font-size: 30px;
+     color: rgb(105, 103, 103);
+   }
+
+   h1,h2,h4{
+    margin-left: -100px;
+    margin-top: 15px;
+    display: flex;
+    font-size: 28px;
+    font-weight: bold;
+   }
+     
+  .contenido {
+    grid-area: contenido;  
+    display: grid;
+    grid-gap:15px;
+    grid-template-columns: [left] 300px [linea2] 300px [linea3] 300px [linea4] 300px;
+    background: whitesmoke;
+    justify-content: center;
+    align-items: end; 
+  }
+
+  .contenido img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .footer{ 
+    background-color: white;
+    display: grid;
+    font-size: 15px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);  
+  }
+
+/*contenido responsive a tabletas de 768px*/
+
+    @media screen and (max-width: 768px) {
+       	.container {
+       	 grid-template-columns: 70px 1fr;
+         grid-template-areas:  "header header"        
+                               "left contenido"                      
+                               "footer footer"                         
+      }/*como al responsivear paso de tener 3 columnas a tener dos y de tener 3 filas a tener 4 lo que hago es reacomodar las áreas en función del espacio que tengo y el que van a ocupar*/
+    
+    h1,h2,h4 {
+         margin-left: -35px;
+         margin-top: 15px;
+         display: flex;
+         font-size: 28px;
+         font-weight: bold;
+      }
+
+    .header input {
+		  	 width: 40%;
+			   padding: 5px;
+			   font-size: 10px;
+			   border: 1px solid #dbdbe2;
+			   border-radius: 5px; /*como les estoy poniendo un borde a estos elementos para que no se salgan los pongo en una caja con prop border-box*/
+		     margin-left: 170px;
+			   margin-bottom: 5px;  
+         box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);  
+		  }
+      }
+
+     
+  </style>
+   </head>
+    <body>
+    	<section class=container>
+      
+       <div class="item header"><img src="https://imgur.com/9SMDTeP" style= "height: 40px;"/>
+       
+        <p style="font-size: 30px;color: rgb(236, 226, 226);text-shadow: 2px 2px rgba(201, 71, 82, .8), -2px -2px rgb(87, 84, 84);margin-top: 15px;"><strong>Moovie.es</strong></p>  
+       <input type="text" placeholder="Busca tu peli, actor, actriz o director favorito" style="height: 20px;margin-top: 11px;">
+       <p style="margin-left: 200px;">Pato Lucas</p>
+       <img class="lucas" src="https://imgur.com/4dFdEJM" style="box-shadow: none;"/>
+       <img class="play" src="https://imgur.com/v0f9KYG" style="margin-left: 0;margin-top: 15px; box-shadow: none;"/>
+       </div>
+     
+    <div class="item left">
+      
+        <img src="https://imgur.com/XWa7f8I" style="align-self: end;">
+        <p style="display: flex;margin: 0 8px;align-self: flex-start;">Home</p>
+        <img src="https://imgur.com/Gw9b5BV"  style="align-self: end;"/> 
+        <p style="display: flex;align-self: flex-start;">Trending</p> 
+        <img src="https://imgur.com/YhEfa8D"  style="align-self: end;"/>
+        <p style="display: flex;align-self: flex-start;">Más likes</p>
+        <img src="https://imgur.com/s0Yt1r3" style="align-self: end;">
+        <p style="display: flex;margin: 0 5px;align-self: center">Ajustes</p>
+        </div>
+        
+      <div class="item contenido">
+        
+        <figure class="image-container"> 
+        <div class="titulo">
+        <h1 class="title">Ahora en el cine</h1>
+        </div> 
+
+        <div class="item"><img src="https://imgur.com/d9smkAD" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Kill Bill Vol.1</h3>
+        <p class="image-description">Una asesina despierta de un coma y, tras descubrir que el hijo que llevaba en el vientre ya no está, decide salir a buscar a los criminales que la traicionaron.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/eQE55iQ" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Kill Bill 2</h3>
+        <p class="image-description">Una asesina continúa con su búsqueda de venganza. Los próximos en la lista son una mujer con un solo ojo, un bravucón ermitaño y su antiguo jefe y amante.</p>
+        </div>
+        </div>
+        </figure>
+        
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/0MYnPYO" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Bastardos sin gloria</h3>
+        <p class="image-description">Es el primer año de la ocupación alemana de Francia. El oficial aliado, Aldo Raine, arma un equipo de soldados judíos para cometer actos violentos en contra de los nazis.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/E8X3hK2" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Reservoire dogs</h3>
+        <p class="image-description">Seis criminales profesionales son contratados para robar en un almacén de diamantes, pero la policía aparece inesperadamente en el momento del atraco.</p>
+        </div>
+        </div>
+        </figure>
+           
+        <figure class="image-container">
+        <div class="titulo">
+        <h2 class="title">Aclamadas por la crítica</h2>
+        </div>
+
+        <div class="item"><img src="https://imgur.com/fDBD5tL" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Pulp Fiction</h3>
+       	<p class="image-description">La vida de un boxeador, dos sicarios, la esposa de un gánster y dos bandidos se entrelaza en una historia de locura, drogas, violencia y redención. </p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/iKm29GG" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Érase una vez en Hollywood</h3>
+        <p class="image-description">En el Hollywood de los '60, el actor Rick Dalton junto a su doble, intentan modificar sus malos hábitos, mientras nace una relación entre Rick y la actriz Sharon Tate.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/oTQST4A" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Django, sin cadenas</h3>
+        <p class="image-description">Un exesclavo une fuerzas con un cazador de recompensas alemán que lo liberó y lo ayuda a buscar a los criminales más buscados del sur de los Estados Unidos.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/lKVYmaj" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Jackie Brown</h3>
+        <p class="image-description">Una azafata es acusada de traficar y de lavar dinero, pero para evitar ir a prisión colabora con la policía para atrapar a su proveedor con un final inesperado.</p>
+        </div>
+        </div>
+        </figure>
+             
+        <figure class="image-container">
+        <div class="titulo">
+        <h4 class="title">No debes perderte</h4>
+        </div>
+
+        <div class="item"><img src="https://imgur.com/5JuT0f9" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">From Dusk till Dawn</h3>
+        <p class="image-description">Una familia secuestrada y sus dos captores se enfrentan a vampiros sedientos de sangre, al cruzar la frontera mexicana mientras luchan por sobrevivir.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/LB5NXtX" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Death proof</h3>
+        <p class="image-description">Un experimentado doble cinematográfico usa su automóvil para acechar y matar a jóvenes mujeres confiadas en el sur de Estados Unidos.</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/64FcLrY" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Asesinos por naturaleza</h3>
+       	<p class="image-description">A través de la frontera mexicana, la policía persigue a dos prófugos de una prisión estadounidense de alta seguridad. Mientras tanto la historia de amor...</p>
+        </div>
+        </div>
+        </figure>
+
+        <figure class="image-container">
+        <div class="item"><img src="https://imgur.com/Pg1LZJG" width="200" height="300" alt=""></div>
+        <div class="detail-container">
+        <div class="image-detail">
+        <h3 class="image-title">Desperado</h3>
+       	<p class="image-description">Ya no es aquel joven inocente que se hizo pistolero por culpa de las circunstancias. Ahora es un auténtico hombre de acción, que no se separa del viejo estuche de su guitarra.</p>
+        </div>
+        </div>
+        </figure>
+           
+        </div>
+      
+        <div class="item footer">      
+        <p style="display: flex;justify-content: center;">Desafío cumplido  🎬  Ciclo Quentin Tarantino</p>
+       </div>		
+	  </section>  
+</body>
+</html>
